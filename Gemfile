@@ -27,5 +27,6 @@ end
 
 path 'engines' do
   gem 'candidate'
-  gem 'entity'
+  gem 'entity'  
+  gem 'common'
 end
