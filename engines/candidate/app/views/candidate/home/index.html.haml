@@ -1,0 +1,30 @@
+#candidate-header
+  .columns
+    .column.text-center
+      %figure.image.is-64x64.is-center
+        = image_tag 'no-image.png', class: 'is-rounded'
+    .column.text-center
+      %p.title.is-4 Elton Silva
+      %p.subtitle.is-6 RII - Habilitado documentação aprovada
+    .column
+      .tabs.is-centered
+        %ul
+          %li#link-cadastre= link_to "Meu cadastro", candidate.cadastres_path, remote: true
+          %li#link-action.is-active= link_to "Ações", candidate.root_path, remote: true
+          %li#link-notification= link_to "Notificações", candidate.notifications_path, remote: true
+.container
+  .columns.is-mobile.text-center
+    .column
+      = link_to "Notificações"
+    .column
+      = link_to "Atendimento"
+    .column
+      = link_to "Requerimentos"
+
+  .columns.is-mobile.text-center
+    .column
+      = link_to "Agendamento"
+    .column
+      = link_to "Indicação"
+    .column
+      = link_to "Entidade"

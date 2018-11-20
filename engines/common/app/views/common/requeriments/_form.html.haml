@@ -1,0 +1,14 @@
+= simple_form_for url_for do |f|
+  .columns
+    .column
+      = f.input :subject_id, as: :select, include_blank: 'Selecione a categoria...'
+    .column
+      = f.input :description, as: :string
+    .column
+      Anexos
+  .columns.is-mobile
+    .column
+      = link_to 'Enviar', "#", class: 'button is-fullwidth is-warning'
+      .mini-divider
+      = link_to 'Cancelar', "#", class: 'button is-fullwidth is-dark'
+      

@@ -3,6 +3,8 @@ PATH
   specs:
     candidate (0.1.0)
       rails (~> 5.2.1)
+    common (0.1.0)
+      rails (~> 5.2.1)
     entity (0.1.0)
       rails (~> 5.2.1)
 
@@ -177,6 +179,7 @@ DEPENDENCIES
   bulma-rails (~> 0.7.1)
   byebug
   candidate!
+  common!
   entity!
   haml
   jquery-rails (~> 4.3.3)

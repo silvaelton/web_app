@@ -1,0 +1,32 @@
+.container {
+  margin: 20px !important;
+}
+
+.side-divider {
+  border-left: 1px whitesmoke solid;
+}
+
+.text-is-invalid{
+	color: #fd493a;
+}
+
+.input-error label {
+	color: #fd493a;
+}
+
+.input-error select {
+  border: 1px solid #fd493a;
+}
+
+.select {
+  width: 100% !important;
+  display: block !important;
+}
+
+.select:not(.is-multiple) {
+  height: auto !important;
+}
+
+.select::after {
+  content: none !important;
+}

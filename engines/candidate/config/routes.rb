@@ -1,5 +1,6 @@
 Candidate::Engine.routes.draw do
-  root 'dashboard#index'
+  root 'home#index'
 
-  resources :cadastres, only: [:show]
+  resources :cadastres
+  resources :notifications
 end

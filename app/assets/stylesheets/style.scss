@@ -1,0 +1,26 @@
+.divider {
+  margin-top: 30px;
+}
+
+.mini-divider {
+  margin-top: 15px;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.is-center {
+  margin: 0 auto !important;
+}
+
+
+
+#candidate-header {
+  padding-top: 30px;  
+  background: #ffd932;
+  background: -moz-linear-gradient(45deg, #ffd932 0%, #f4b350 100%);
+  background: -webkit-linear-gradient(45deg, #ffd932 0%,#f4b350 100%);
+  background: linear-gradient(45deg, #ffd932 0%,#f4b350 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd932', endColorstr='#f4b350',GradientType=1 );
+}
