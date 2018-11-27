@@ -1,0 +1,4 @@
+- if @session.errors.any?
+  $(".modal").html("#{escape_javascript(render 'error')}");
+  $(".modal").addClass("is-active");
+  bulma();

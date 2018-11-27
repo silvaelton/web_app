@@ -1,0 +1,12 @@
+pt-BR:
+  success: "Operação realizada com sucesso!"
+  error: "Não foi possível realizar esta operação, tente novamente daqui instantes"
+  confirm_delete: "Deseja realmente remover?"
+  confirm: "Deseja realmente executar essa ação?"
+  disable_with: "Aguarde..."
+  cancel: "Cancelar"
+  filter_button: "Filtrar Pesquisa"
+  warning_pundit: "Você não tem permissão de acesso neste sistema."
+  no_info: "Sem informação"
+  reset_button: "Limpar filtro"
+  include_blank: "Selecione..."

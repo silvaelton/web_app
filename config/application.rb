@@ -11,23 +11,22 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
-# require "rails/test_unit/railtie"
 
-# Require the gems listed in Gemfile, including any gems
-# you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
 module WebApp
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration can go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded after loading
-    # the framework and any gems in your application.
+    config.assets.paths << File.join(Rails.root, 'vendor', 'kits')
+    config.assets.paths << File.join(Rails.root, 'vendor', 'javascripts')
+    config.assets.paths << File.join(Rails.root, 'vendor', 'stylesheets')
+    config.assets.paths << File.join(Rails.root, 'app', 'assets', 'fonts')
+    
+    config.time_zone = 'Brasilia'
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+    config.i18n.default_locale = :'pt-BR'
 
-    # Don't generate system test files.
     config.generators.system_tests = nil
   end
 end
