@@ -1,0 +1,10 @@
+.modal-background.animated.fadeIn
+.modal-card.animated.bounceIn
+  .modal-card-head
+    .modal-card-title
+    %button.close-modal.delete
+  .modal-card-body.text-center
+    %p.subtitle.is-5 Tem certeza que deseja iniciar um novo atendimento?
+    = link_to "Sim, desejo iniciar", attendance_tickets_path(category_id: @ticket_category), method: :post, class: 'close-modal button is-success is-fullwidth'
+    .mini-divider
+    = link_to "Cancelar", "javascript:void(0)", class: 'close-modal button is-dark is-fullwidth'

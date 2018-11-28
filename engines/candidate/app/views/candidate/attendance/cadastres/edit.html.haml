@@ -1,0 +1,12 @@
+#header
+  .columns
+    .column.text-center
+      %p.subtitle.is-5 Atendimento
+#content
+  .container
+    .columns
+      .column
+        = link_to "Cancelar atualização".html_safe, attendance_ticket_steps_path(1), class: 'button is-danger is-fullwidth ', data: { disable_with: t(:disable_with)}
+    .columns
+      .column#app-form
+        = render 'form'

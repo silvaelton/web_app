@@ -1,0 +1,80 @@
+= simple_form_for url_for do |f|
+  #first
+    %p.subtitle.text-center 1. Dados básicos
+    = f.input :name, input_html: { disabled: true}
+    = f.input :cpf, input_html: { class: 'cpf' , disabled: true}
+    = f.input :rg
+    = f.input :rg_org
+    = f.input :rg_uf_id, as: :select, include_blank: t(:include_blank)
+    = f.input :gender_id, as: :select, include_blank: t(:include_blank)
+    = f.input :born, as: :string, input_html: { class: 'date', value: nil}
+    = f.input :born_uf_id, as: :select, include_blank: t(:include_blank)
+    .divider
+    = link_to "Prosseguir", "javascript:void(0)", class: 'button is-fullwidth is-success next', data: { show: 'second', hide: 'first'}
+  #second{style: 'display: none;'}
+    %p.subtitle.text-center 2. Dados complementares
+    = f.input :civil_state_id, as: :select, include_blank: t(:include_blank)
+    = f.input :place_birth
+    = f.input :arrival_df, as: :string, input_html: { class: 'date', value: nil}
+    = f.input :mother_name
+    .divider
+    = link_to "Prosseguir", "javascript:void(0)", class: 'button is-fullwidth is-success next', data: { show: 'third', hide: 'second'}
+    .mini-divider
+    = link_to "Retornar", "javascript:void(0)", class: 'button is-fullwidth is-dark next', data: { show: 'first', hide: 'second'}
+  #third{style: 'display: none;'}
+    %p.subtitle.text-center 3. Dados de contato
+    = f.input :telephone
+    = f.input :telephone_optional
+    = f.input :celphone
+    = f.input :email
+    .divider
+    = link_to "Prosseguir", "javascript:void(0)", class: 'button is-fullwidth is-success next', data: { show: 'four', hide: 'third'}
+    .mini-divider
+    = link_to "Retornar", "javascript:void(0)", class: 'button is-fullwidth is-dark next', data: { show: 'second', hide: 'third'}
+      
+  #four{style: 'display: none;'}
+    %p.subtitle.text-center 4. Dados de condição especial
+    = f.input :special_condition, as: :select, include_blank: false
+    = f.input :special_condition_type_id, as: :select, include_blank: t(:include_blank)
+    = f.input :adapted_property, as: :select, include_blank: false
+    = f.input :nis
+    = f.input :cid
+    .divider
+    = link_to "Prosseguir", "javascript:void(0)", class: 'button is-fullwidth is-success next', data: { show: 'five', hide: 'four'}
+    .mini-divider
+    = link_to "Retornar", "javascript:void(0)", class: 'button is-fullwidth is-dark next', data: { show: 'third', hide: 'four'}
+             
+  #five{style: 'display: none;'}
+    %p.subtitle.text-center 5. Localização
+    = f.input :state_id, as: :select, include_blank: t(:include_blank)
+    = f.input :city_id, as: :select, include_blank: t(:include_blank)
+    = f.input :cep
+    = f.input :address
+    = f.input :address_complement
+    .divider
+    = link_to "Prosseguir", "javascript:void(0)", class: 'button is-fullwidth is-success next', data: { show: 'six', hide: 'five'}
+    .mini-divider
+    = link_to "Retornar", "javascript:void(0)", class: 'button is-fullwidth is-dark next', data: { show: 'four', hide: 'five'}   
+  #six{style: 'display: none;'}
+    %p.subtitle.text-center 6. Informações de trabalho
+    = f.input :work_cep
+    = f.input :work_city_id
+    = f.input :work_state_id
+    = f.input :work_address
+    = f.input :work_employment
+    .divider
+    = link_to "Prosseguir", "javascript:void(0)", class: 'button is-fullwidth is-success next', data: { show: 'seven', hide: 'six'}
+    .mini-divider
+    = link_to "Retornar", "javascript:void(0)", class: 'button is-fullwidth is-dark next', data: { show: 'five', hide: 'six'}        
+  #seven{style: 'display: none;'}
+    = f.submit 'Salvar informações', class: 'button is-fullwidth is-success'
+    .mini-divider
+    = link_to "Retornar", "javascript:void(0)", class: 'button is-fullwidth is-dark next ', data: { show: 'six', hide: 'seven'}        
+
+:javascript
+  $(document).ready(function() {
+    $(".next").on('click', function() {
+      $("#" + $(this).data('hide')).hide();
+      $("#" + $(this).data('show')).fadeIn();
+    });
+  });

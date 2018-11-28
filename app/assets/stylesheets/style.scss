@@ -75,3 +75,16 @@
   color: white !important;
   font-weight: bold !important;
 }
+
+#app-form input:focus {
+  border: 2px solid yellow !important;
+  box-shadow: 0 0 0 0.125em rgb(244, 181, 76) !important;
+  height: 50px;
+  font-size: 20px;
+}
+
+.button .is-bigger {
+  height: 60px;
+  font-size: 20px;
+  font-weight: bold;
+}

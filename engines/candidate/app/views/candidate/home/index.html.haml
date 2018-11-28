@@ -25,7 +25,7 @@
     .big-divider
     .columns.is-gap.is-mobile.text-center
       .column
-        = link_to "#", remote: true do
+        = link_to candidate.attendance_tickets_path do
           = image_tag('icon-refresh.png')
           %p Atendimento
 
@@ -41,5 +41,5 @@
           %p Indicações
       .column
         = link_to "#", remote: true do
-          = image_tag('icon-team.png')
-          %p Entidade
+          = image_tag('icon-contract.png')
+          %p Requerimentos

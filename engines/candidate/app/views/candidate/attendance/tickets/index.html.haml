@@ -1,0 +1,55 @@
+#header
+  .columns
+    .column.text-center
+      %p.subtitle.is-5 Atendimento
+#content
+  .container
+    .columns
+      .column
+        = link_to "Voltar para página principal".html_safe, candidate.root_path, class: 'button is-dark is-fullwidth', data: { disable_with: t(:disable_with)}
+    
+    - if current_user.policy.allow_new_ticket?
+      .columns
+        .column.text-center
+          %p.title.is-6 Atendimentos disponíveis
+
+      .columns
+        - @ticket_categories.each do |category|
+          - if category.policy.is_allow?(current_user)
+            .column
+              = link_to candidate.new_attendance_ticket_path(category_id: category.id), remote: true do
+                .box
+                  .columns.is-mobile
+                    .column
+                      %p= category.name
+    - else
+      .columns
+        .column.text-center
+          %p.title.is-6 Atendimento em progresso
+      .columns
+        - current_user.tickets.each do |ticket|
+          .column
+            = link_to candidate.attendance_ticket_steps_path(ticket) do
+              .box
+                = ticket.id  
+    .divider
+
+    .columns
+      .column.text-center
+        %p.title.is-6 Meus atendimentos
+    .columns
+      - if current_user.tickets.present?
+        - current_user.tickets.each do |ticket|
+          .column
+            .box   
+              .columns.is-mobile
+                .column
+                  %p= ticket.id            
+      - else
+        .column
+          .box.text-center
+            .columns
+              .column
+                = image_tag('icon-inbox.png')
+              .column
+                %i Você ainda não possui atendimentos realizados.
